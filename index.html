@@ -53,15 +53,11 @@
     --accent:#B23A1F;
     --accent-dark:#8A2A16;
     --accent-quiet:rgba(178,58,31,.09);
-    --accent-gold:#C98A2C;
+    --accent-gold:#B4791E;
     --hairline:rgba(42,27,18,.14);
-    --hairline-strong:rgba(42,27,18,.24);
-    --radius-sm:6px;
-    --radius-md:14px;
-    --radius-lg:26px;
-    --shadow-sm:0 1px 2px rgba(42,27,18,.08), 0 1px 1px rgba(42,27,18,.05);
-    --shadow-md:0 8px 24px -8px rgba(42,27,18,.24);
-    --shadow-lg:0 24px 60px -20px rgba(42,27,18,.34);
+    --hairline-strong:rgba(42,27,18,.26);
+    --shadow-md:0 8px 24px -8px rgba(42,27,18,.22);
+    --shadow-lg:0 28px 64px -22px rgba(42,27,18,.38);
     --dur-fast:180ms;
     --dur-base:280ms;
     --dur-slow:480ms;
@@ -75,25 +71,25 @@
     background:var(--surface);
     color:var(--ink);
     font-family:"Work Sans",ui-sans-serif,system-ui,sans-serif;
+    font-size:17px;
     -webkit-font-smoothing:antialiased;
-    line-height:1.55;
+    line-height:1.6;
   }
   h1,h2,h3{font-family:"Fraunces",Georgia,serif;text-wrap:balance;margin:0;font-weight:600;}
   p{margin:0;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
-  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
-  section{padding:96px 0;}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+  section{padding:128px 0;}
   @media (max-width:720px){ section{padding:64px 0;} }
 
-  .eyebrow{
-    display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.78rem;
-    letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);
-    background:var(--accent-quiet);padding:.35em .8em;border-radius:999px;margin-bottom:1.1em;
+  .kicker{
+    display:block;font-family:"JetBrains Mono",monospace;font-size:.75rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;
+    margin-bottom:.9em;
   }
-  h2.section-title{font-size:clamp(1.9rem,1.5rem+1.6vw,2.6rem);margin-bottom:.4em;}
-  .section-lede{color:var(--ink-muted);font-size:1.05rem;max-width:640px;margin-bottom:2.6em;}
+  h2.section-title{font-size:clamp(1.75rem,1.4rem+1.6vw,2.5rem);letter-spacing:-.02em;line-height:1.12;}
 
   .btn{
     display:inline-flex;align-items:center;gap:.5em;padding:.85em 1.5em;border-radius:999px;
@@ -101,11 +97,11 @@
     border:1px solid transparent;font-size:.98rem;
   }
   .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--accent);color:var(--paper);box-shadow:var(--shadow-sm);}
+  .btn-primary{background:var(--accent);color:var(--paper);}
   .btn-primary:hover{background:var(--accent-dark);box-shadow:var(--shadow-md);}
   .btn-ghost{background:transparent;border-color:var(--hairline-strong);color:var(--ink);}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent-dark);}
-  .btn-light{background:var(--paper);color:var(--ink);box-shadow:var(--shadow-sm);}
+  .btn-light{background:var(--paper);color:var(--ink);border-color:var(--hairline);}
   .btn-light:hover{box-shadow:var(--shadow-md);}
 
   /* HEADER */
@@ -113,24 +109,24 @@
     position:sticky;top:0;z-index:50;background:rgba(251,243,229,.92);
     backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--hairline);
   }
-  .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
-  .brand{display:flex;align-items:center;gap:.6em;font-family:"Fraunces",serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink);}
+  .nav-inner{max-width:1160px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+  .brand{display:flex;align-items:center;gap:.6em;font-family:"Fraunces",serif;font-weight:700;font-size:1.1rem;letter-spacing:-.01em;text-decoration:none;color:var(--ink);}
   .brand-mark{
-    display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;
-    background:var(--accent);color:var(--paper);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.85rem;
+    display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;
+    background:var(--accent);color:var(--paper);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.8rem;
   }
-  nav.links{display:flex;gap:1.9rem;font-size:.95rem;font-weight:500;}
+  nav.links{display:flex;gap:1.8rem;font-size:.92rem;font-weight:500;}
   nav.links a{text-decoration:none;color:var(--ink-muted);transition:color var(--dur-fast);}
   nav.links a:hover{color:var(--accent-dark);}
   .header-cta{
     display:inline-flex;align-items:center;gap:.5em;background:var(--accent);color:var(--paper);
-    padding:.6em 1.2em;border-radius:999px;font-weight:600;font-size:.92rem;text-decoration:none;white-space:nowrap;
+    padding:.55em 1.1em;border-radius:999px;font-weight:600;font-size:.88rem;text-decoration:none;white-space:nowrap;
   }
   .header-cta:hover{background:var(--accent-dark);}
   .cta-short{display:none;}
   .menu-toggle{display:none;background:none;border:none;color:var(--ink);cursor:pointer;padding:.4em;}
   @media (max-width:820px){
-    nav.links{position:fixed;top:72px;left:0;right:0;background:var(--paper);flex-direction:column;
+    nav.links{position:fixed;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;
       padding:1.2rem 24px;gap:1.1rem;border-bottom:1px solid var(--hairline);transform:translateY(-8px);
       opacity:0;pointer-events:none;transition:opacity var(--dur-base),transform var(--dur-base);}
     nav.links.open{opacity:1;pointer-events:auto;transform:translateY(0);}
@@ -139,120 +135,118 @@
   }
 
   /* HERO */
-  .hero{padding:64px 0 88px;position:relative;overflow:hidden;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
-  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:40px;} .hero{padding:40px 0 56px;} }
-  .hero h1{font-size:clamp(2.4rem,1.8rem+2.6vw,3.6rem);margin:.15em 0 .5em;}
-  .hero .lede{font-size:1.12rem;color:var(--ink-muted);max-width:520px;margin-bottom:1.6em;}
-  .rating-row{display:flex;align-items:center;gap:.7em;margin-bottom:1.8em;font-size:.98rem;flex-wrap:wrap;}
-  .stars{color:var(--accent-gold);letter-spacing:.05em;}
+  .hero{padding:56px 0 0;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1fr .82fr;gap:56px;align-items:center;}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:32px;} .hero{padding:32px 0 0;} }
+  .hero h1{font-size:clamp(2.75rem,2rem+3vw,4.2rem);letter-spacing:-.03em;line-height:.98;margin:.2em 0 .4em;}
+  .hero .lede{font-size:1.15rem;color:var(--ink-muted);max-width:460px;margin-bottom:1.7em;}
   .hero-ctas{display:flex;gap:.9em;flex-wrap:wrap;}
-  .hero-art{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5;}
+  .hero-art{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5;}
   .hero-art img{width:100%;height:100%;object-fit:cover;}
-  .hero-art-tag{
-    position:absolute;bottom:18px;left:18px;background:rgba(42,27,18,.72);color:var(--paper);
-    padding:.5em 1em;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:.78rem;backdrop-filter:blur(4px);
+
+  /* FACTS STRIP */
+  .facts{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-top:64px;}
+  .facts-row{display:grid;grid-template-columns:repeat(4,1fr);}
+  .facts-row div{padding:28px 8px;text-align:center;border-left:1px solid var(--hairline);}
+  .facts-row div:first-child{border-left:none;}
+  @media (max-width:760px){
+    .facts-row{grid-template-columns:1fr 1fr;}
+    .facts-row div:nth-child(3){border-left:none;}
   }
+  .facts-num{display:block;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:1.5rem;color:var(--accent-dark);letter-spacing:-.01em;}
+  .facts-label{display:block;font-size:.82rem;color:var(--ink-muted);margin-top:.3em;}
 
   /* STORY */
   .story{background:var(--surface-raised);}
-  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-  @media (max-width:860px){ .story-grid{grid-template-columns:1fr;} }
-  .story p + p{margin-top:1.1em;}
+  .story-grid{display:grid;grid-template-columns:.62fr 1fr;gap:56px;align-items:start;}
+  @media (max-width:860px){ .story-grid{grid-template-columns:1fr;gap:24px;} }
+  .story p + p{margin-top:1em;}
   .story-quote{
-    margin-top:1.8em;padding:1.4em 1.6em;background:var(--paper);border-left:3px solid var(--accent);
-    border-radius:var(--radius-sm);font-family:"Fraunces",serif;font-style:italic;font-size:1.08rem;color:var(--ink);
+    margin-top:1.7em;padding-left:1.3em;border-left:3px solid var(--accent);
+    font-family:"Fraunces",serif;font-style:italic;font-size:1.25rem;line-height:1.35;color:var(--ink);
   }
-  .story-quote cite{display:block;margin-top:.6em;font-family:"Work Sans",sans-serif;font-style:normal;
+  .story-quote cite{display:block;margin-top:.7em;font-family:"Work Sans",sans-serif;font-style:normal;
     font-size:.82rem;color:var(--ink-muted);}
 
-  /* MENU */
-  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  @media (max-width:860px){ .menu-grid{grid-template-columns:1fr 1fr;} }
-  @media (max-width:560px){ .menu-grid{grid-template-columns:1fr;} }
-  .dish-card{
-    background:var(--paper);border-radius:var(--radius-md);padding:1.6em 1.5em;box-shadow:var(--shadow-sm);
-    border:1px solid var(--hairline);transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
-  }
-  .dish-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-  .dish-card h3{font-size:1.15rem;margin-bottom:.35em;}
-  .dish-card .tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.72rem;
-    color:var(--accent-dark);background:var(--accent-quiet);padding:.25em .65em;border-radius:999px;margin-bottom:.7em;}
-  .dish-card p{color:var(--ink-muted);font-size:.94rem;}
-  .sides-box{
-    margin-top:2.4em;background:var(--paper);border-radius:var(--radius-md);padding:1.8em 2em;
-    border:1px solid var(--hairline);display:flex;gap:2em;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;
-  }
-  .sides-box .col{flex:1;min-width:220px;}
-  .sides-box h4{font-family:"JetBrains Mono",monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
-    color:var(--ink-muted);margin-bottom:.7em;}
-  .sides-box ul{margin:0;padding:0;list-style:none;font-size:.96rem;}
-  .sides-box li{padding:.3em 0;border-bottom:1px dashed var(--hairline);}
-  .sides-box li:last-child{border-bottom:none;}
-  .price-note{margin-top:1.8em;color:var(--ink-muted);font-size:.92rem;}
-  .price-note .amt{font-family:"JetBrains Mono",monospace;font-weight:600;color:var(--ink);}
+  /* MENU BOARD */
+  .board{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;}
+  @media (max-width:760px){ .board{grid-template-columns:1fr;gap:0;} }
+  .board-col h4{font-family:"JetBrains Mono",monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;
+    color:var(--ink-muted);margin:0 0 .6em;padding-top:1.6em;}
+  .board-col:first-child h4{padding-top:0;}
+  .dish-row{display:flex;justify-content:space-between;align-items:baseline;gap:1.2em;padding:.85em 0;border-bottom:1px dashed var(--hairline);}
+  .dish-row:last-child{border-bottom:none;}
+  .dish-row .name{font-family:"Fraunces",serif;font-weight:600;font-size:1.05rem;}
+  .dish-row .note{font-size:.85rem;color:var(--ink-muted);text-align:right;white-space:nowrap;}
+  .dish-row.featured{background:var(--accent-quiet);margin:0 -1em;padding:.85em 1em;border-radius:10px;border-bottom:none;}
+  .dish-row.featured .name{font-size:1.3rem;color:var(--accent-dark);}
+  .dish-row.featured .note{color:var(--accent-dark);font-weight:600;}
+  .menu-foot{margin-top:2.2em;padding-top:1.6em;border-top:1px solid var(--hairline);
+    display:flex;justify-content:space-between;gap:1.5em;flex-wrap:wrap;font-size:.9rem;color:var(--ink-muted);}
+  .menu-foot .amt{font-family:"JetBrains Mono",monospace;font-weight:600;color:var(--ink);}
 
   /* GALLERY */
-  .gallery-banner{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:21/9;}
+  .gallery-banner{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:21/9;}
   .gallery-banner img{width:100%;height:100%;object-fit:cover;}
   @media (max-width:760px){ .gallery-banner{aspect-ratio:4/5;} }
   .gallery-caption{
-    position:absolute;left:0;right:0;bottom:0;padding:2.4em 2em 1.6em;
-    background:linear-gradient(to top, rgba(42,27,18,.82), rgba(42,27,18,0));color:var(--paper);
+    position:absolute;left:0;right:0;bottom:0;padding:2.2em 1.8em 1.5em;
+    background:linear-gradient(to top, rgba(42,27,18,.8), rgba(42,27,18,0));color:var(--paper);
   }
-  .gallery-caption p{font-family:"Fraunces",serif;font-size:1.2rem;max-width:520px;}
-  @media (max-width:560px){ .gallery-caption p{font-size:1.02rem;} }
+  .gallery-caption p{font-family:"Fraunces",serif;font-size:1.15rem;max-width:480px;}
 
   /* REVIEWS */
   .reviews{background:var(--surface-raised);}
-  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  @media (max-width:860px){ .review-grid{grid-template-columns:1fr;} }
-  .review-card{background:var(--paper);border-radius:var(--radius-md);padding:1.7em 1.6em;box-shadow:var(--shadow-sm);border:1px solid var(--hairline);}
-  .review-card .stars{display:block;margin-bottom:.6em;font-size:.95rem;}
-  .review-card p{font-size:1rem;color:var(--ink);}
-  .review-card cite{display:block;margin-top:1em;font-size:.82rem;color:var(--ink-muted);font-style:normal;}
+  .review-lead{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.4rem,1.1rem+1.2vw,1.9rem);
+    line-height:1.3;letter-spacing:-.01em;max-width:760px;color:var(--ink);}
+  .review-lead cite{display:block;margin-top:.6em;font-family:"Work Sans",sans-serif;font-style:normal;
+    font-size:.85rem;color:var(--ink-muted);}
+  .review-minor-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--hairline-strong);}
+  @media (max-width:700px){ .review-minor-row{grid-template-columns:1fr;gap:24px;} }
+  .review-minor p{font-size:.98rem;}
+  .review-minor cite{display:block;margin-top:.5em;font-size:.82rem;color:var(--ink-muted);}
 
   /* FIND US */
-  .find-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .find-grid{display:grid;grid-template-columns:1fr .72fr;gap:48px;align-items:start;}
   @media (max-width:860px){ .find-grid{grid-template-columns:1fr;} }
-  .honest-box{
-    background:var(--accent-quiet);border:1px solid rgba(178,58,31,.22);border-radius:var(--radius-md);
-    padding:1.4em 1.5em;margin-bottom:1.8em;font-size:.95rem;color:var(--ink);
-  }
-  .honest-box b{color:var(--accent-dark);}
-  .find-ctas{display:flex;gap:.9em;flex-wrap:wrap;margin-top:1.6em;}
-  .hours-table{width:100%;border-collapse:collapse;font-size:.98rem;}
-  .hours-table td{padding:.6em 0;border-bottom:1px dashed var(--hairline);}
+  .honest-line{font-size:.95rem;color:var(--ink-muted);margin-bottom:1.4em;max-width:480px;}
+  .honest-line b{color:var(--accent-dark);}
+  .find-ctas{display:flex;gap:.9em;flex-wrap:wrap;margin-top:1.5em;}
+  .hours-table{width:100%;border-collapse:collapse;font-size:.95rem;}
+  .hours-table td{padding:.55em 0;border-bottom:1px dashed var(--hairline);}
   .hours-table td:last-child{text-align:right;font-family:"JetBrains Mono",monospace;font-weight:500;}
   .hours-table tr:last-child td{border-bottom:none;}
-  .hours-card{background:var(--paper);border-radius:var(--radius-md);padding:1.8em 2em;box-shadow:var(--shadow-sm);border:1px solid var(--hairline);}
-  .map-frame{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--hairline);margin-top:1.6em;}
-  .map-frame iframe{width:100%;height:280px;border:0;display:block;}
+  .hours-table tr.open td{color:var(--accent-dark);font-weight:600;}
+  .map-frame{border-radius:14px;overflow:hidden;border:1px solid var(--hairline);margin-top:1.5em;}
+  .map-frame iframe{width:100%;height:260px;border:0;display:block;}
 
   /* CONTACT */
   .contact{background:var(--ink);color:var(--surface);}
   .contact h2{color:var(--surface);}
-  .contact .section-lede{color:rgba(251,243,229,.7);}
-  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
-  .contact-card{
-    background:rgba(251,243,229,.06);border:1px solid rgba(251,243,229,.14);border-radius:var(--radius-md);
-    padding:1.7em 1.6em;text-decoration:none;transition:background var(--dur-base), transform var(--dur-base);
+  .contact-primary{
+    display:flex;align-items:center;justify-content:space-between;gap:1.5em;flex-wrap:wrap;
+    padding:1.6em 0;border-top:1px solid rgba(251,243,229,.16);border-bottom:1px solid rgba(251,243,229,.16);
+    margin-top:2em;text-decoration:none;
   }
-  .contact-card:hover{background:rgba(251,243,229,.1);transform:translateY(-3px);}
-  .contact-card .tag{font-family:"JetBrains Mono",monospace;font-size:.75rem;text-transform:uppercase;
-    letter-spacing:.06em;color:var(--accent-gold);display:block;margin-bottom:.6em;}
-  .contact-card .val{font-size:1.15rem;font-weight:600;color:var(--surface);}
-  .contact-card .sub{font-size:.88rem;color:rgba(251,243,229,.65);margin-top:.4em;}
+  .contact-primary .label{font-family:"JetBrains Mono",monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-gold);}
+  .contact-primary .num{font-family:"Fraunces",serif;font-size:clamp(1.8rem,1.4rem+1.6vw,2.6rem);letter-spacing:-.02em;color:var(--surface);margin-top:.15em;}
+  .contact-primary .sub{color:rgba(251,243,229,.6);font-size:.92rem;max-width:220px;text-align:right;}
+  .contact-secondary{display:flex;gap:2.5em;flex-wrap:wrap;margin-top:1.6em;}
+  .contact-secondary a{text-decoration:none;color:rgba(251,243,229,.85);display:flex;align-items:baseline;gap:.6em;font-size:.98rem;}
+  .contact-secondary a .label{font-family:"JetBrains Mono",monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(251,243,229,.45);}
+  .contact-secondary a:hover{color:var(--surface);}
 
-  footer{background:var(--ink);color:rgba(251,243,229,.6);padding:40px 0 32px;border-top:1px solid rgba(251,243,229,.12);}
-  .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.6em;font-size:.86rem;}
-  .footer-brand{font-family:"Fraunces",serif;font-weight:700;font-size:1.05rem;color:var(--surface);margin-bottom:.5em;}
-  .footer-credits{font-size:.74rem;color:rgba(251,243,229,.4);margin-top:1.6em;line-height:1.6;}
-  .footer-credits a{color:rgba(251,243,229,.55);text-decoration:underline;}
+  footer{background:var(--ink);color:rgba(251,243,229,.55);padding:36px 0 28px;border-top:1px solid rgba(251,243,229,.12);}
+  .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.6em;font-size:.85rem;}
+  .footer-brand{font-family:"Fraunces",serif;font-weight:700;font-size:1rem;color:var(--surface);margin-bottom:.4em;}
+  .footer-credits{font-size:.72rem;color:rgba(251,243,229,.38);margin-top:1.5em;line-height:1.6;}
+  .footer-credits a{color:rgba(251,243,229,.52);text-decoration:underline;}
 
-  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease-out), transform .6s var(--ease-out);}
+  [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease-out), transform .55s var(--ease-out);}
   [data-reveal].is-visible{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
 
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 </style>
@@ -266,9 +260,8 @@
       Uncle Beth's BBQ
     </a>
     <nav class="links" id="mobile-nav">
-      <a href="#story">Our story</a>
+      <a href="#story">Story</a>
       <a href="#menu">Menu</a>
-      <a href="#gallery">Gallery</a>
       <a href="#reviews">Reviews</a>
       <a href="#find">Find us</a>
     </nav>
@@ -285,13 +278,9 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">A four-way stop on OH-245 · North Lewisburg, Ohio</span>
-        <h1>Uncle Beth's BBQ</h1>
-        <p class="lede">Everything smoked low and slow and made from scratch — no boxes, no bags. People drive an hour for the brisket. Open three days a week. This is the closest thing to a website we've ever had.</p>
-        <div class="rating-row">
-          <span class="stars">★★★★★</span>
-          <span><b>4.8</b> average from <b>1,000+</b> Google reviews</span>
-        </div>
+        <span class="kicker">North Lewisburg, Ohio — four-way stop on OH-245</span>
+        <h1>Uncle Beth's<br>BBQ</h1>
+        <p class="lede">Brisket, ribs and pulled pork, smoked low and slow, made from scratch. Open three days a week.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Uncle+Beth%27s+BBQ+6262+OH-245+North+Lewisburg+OH+43060" target="_blank" rel="noopener">Get directions</a>
           <a class="btn btn-ghost" href="tel:+19377470123">Call ahead</a>
@@ -299,7 +288,15 @@
       </div>
       <div class="hero-art" data-reveal>
         <img src="img/hero-ribs.jpg" alt="A tray of hickory-smoked ribs, fresh off the smoker" loading="eager">
-        <span class="hero-art-tag mono">Smoked low & slow, every service</span>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="wrap facts-row">
+        <div><span class="facts-num mono">4.8★</span><span class="facts-label">Google rating</span></div>
+        <div><span class="facts-num mono">1,000+</span><span class="facts-label">Reviews, zero ads</span></div>
+        <div><span class="facts-num mono">Thu–Sat</span><span class="facts-label">Only three days a week</span></div>
+        <div><span class="facts-num mono">0</span><span class="facts-label">Websites, until today</span></div>
       </div>
     </div>
   </section>
@@ -308,15 +305,14 @@
   <section class="story" id="story">
     <div class="wrap story-grid">
       <div data-reveal>
-        <span class="eyebrow">Our story</span>
-        <h2 class="section-title">Named after a promise, not a marketing plan.</h2>
+        <span class="kicker">The name</span>
+        <h2 class="section-title">Not a marketing plan.</h2>
       </div>
       <div data-reveal>
-        <p>Beth White runs this place with her son, out of an old log cabin at a crossroads outside North Lewisburg. There's no sign on the highway telling you it's here — most people find it because someone else told them to.</p>
-        <p>The name comes from her niece, who couldn't quite say "Aunt Beth" when she was first learning to talk, so it came out "Uncle Beth" instead — and it stuck. Beth opened the restaurant in her niece's memory after she passed away in a car accident, and the name never changed.</p>
-        <p>Everything on the menu is made from scratch, the way Beth puts it: <b>"restaurants make food out of boxes and bags, we make everything from scratch."</b> That's the whole philosophy, and it's why snowmobilers, tractor drivers, Jaguar owners and at least one customer on horseback have all ended up parked outside the same log cabin.</p>
+        <p>Beth White runs this place with her son, out of an old log cabin at a rural crossroads. There's no sign from the highway — most people find it because someone else told them to.</p>
+        <p>The name comes from her niece, who couldn't quite say "Aunt Beth" as a toddler, so it came out "Uncle Beth" — and it stuck. Beth opened the restaurant in her memory after she passed away in a car accident. Everything's made from scratch: <b>"restaurants make food out of boxes and bags, we make everything from scratch."</b></p>
         <div class="story-quote">
-          "It's probably some of the best BBQ I've ever had."
+          It's probably some of the best BBQ I've ever had.
           <cite>— TripAdvisor review</cite>
         </div>
       </div>
@@ -326,74 +322,54 @@
   <!-- MENU -->
   <section id="menu">
     <div class="wrap">
-      <span class="eyebrow">On the smoker</span>
-      <h2 class="section-title">Brisket, ribs, and everything made by hand.</h2>
-      <p class="section-lede">The menu shifts a little week to week depending on what Beth's cooking, but a few things are always worth the drive.</p>
+      <span class="kicker">On the smoker</span>
+      <h2 class="section-title" style="margin-bottom:1.4em;">What's cooking today.</h2>
 
-      <div class="menu-grid">
-        <div class="dish-card" data-reveal>
-          <span class="tag mono">Saturday special</span>
-          <h3>Brisket</h3>
-          <p>Smoked low and slow until it doesn't need sauce to stand on its own. The dish regulars plan their week around.</p>
+      <div class="board">
+        <div class="board-col">
+          <h4>Smoked</h4>
+          <div class="dish-row featured" data-reveal>
+            <span class="name">Brisket</span>
+            <span class="note mono">Saturdays</span>
+          </div>
+          <div class="dish-row" data-reveal>
+            <span class="name">Ribs</span>
+            <span class="note">Fall-off-the-bone</span>
+          </div>
+          <div class="dish-row" data-reveal>
+            <span class="name">Pulled pork</span>
+            <span class="note">Blackberry / blueberry sauce</span>
+          </div>
+          <div class="dish-row" data-reveal>
+            <span class="name">Chicken &amp; burnt ends</span>
+            <span class="note">Always on</span>
+          </div>
+          <div class="dish-row" data-reveal>
+            <span class="name">Prime rib</span>
+            <span class="note mono">Fri, after 4pm</span>
+          </div>
         </div>
-        <div class="dish-card" data-reveal>
-          <span class="tag mono">Always on</span>
-          <h3>Ribs & pulled pork</h3>
-          <p>Fall-off-the-bone ribs and hand-pulled pork, finished with a choice of housemade sauces — blackberry, blueberry, raspberry.</p>
-        </div>
-        <div class="dish-card" data-reveal>
-          <span class="tag mono">Limited</span>
-          <h3>Prime rib</h3>
-          <p>Fridays after 4pm only, while it lasts. Ask when you call ahead if it's a special occasion.</p>
-        </div>
-        <div class="dish-card" data-reveal>
-          <span class="tag mono">Smoked chicken</span>
-          <h3>Chicken & burnt ends</h3>
-          <p>Smoked chicken and burnt ends round out the board, for the table that can't agree on just one meat.</p>
-        </div>
-        <div class="dish-card" data-reveal>
-          <span class="tag mono">Loaded</span>
-          <h3>Stuffed potatoes & nachos</h3>
-          <p>Baked potatoes and nachos piled with pulled pork — the order regulars sneak in alongside their main plate.</p>
-        </div>
-        <div class="dish-card" data-reveal>
-          <span class="tag mono">Made from scratch</span>
-          <h3>Housemade desserts</h3>
-          <p>Pies and cakes baked in-house, with dairy-free options available if you ask.</p>
+        <div class="board-col">
+          <h4>Sides &amp; extras</h4>
+          <div class="dish-row" data-reveal><span class="name">Mac and cheese</span></div>
+          <div class="dish-row" data-reveal><span class="name">Sweet potato casserole</span></div>
+          <div class="dish-row" data-reveal><span class="name">Jalapeño corn pudding</span></div>
+          <div class="dish-row" data-reveal><span class="name">Collard greens</span></div>
+          <div class="dish-row" data-reveal><span class="name">Stuffed potatoes &amp; nachos</span></div>
+          <div class="dish-row" data-reveal><span class="name">Housemade pies &amp; cakes</span><span class="note">Dairy-free on request</span></div>
         </div>
       </div>
 
-      <div class="sides-box" data-reveal>
-        <div class="col">
-          <h4>Sides worth ordering extra of</h4>
-          <ul>
-            <li>Mac and cheese</li>
-            <li>Sweet potato casserole</li>
-            <li>Jalapeño corn pudding</li>
-            <li>Collard greens</li>
-            <li>Green beans</li>
-            <li>Spiced apples</li>
-          </ul>
-        </div>
-        <div class="col">
-          <h4>Good to know</h4>
-          <ul>
-            <li>No online ordering — walk in or call ahead</li>
-            <li>Feeding a crowd? They regularly handle 30–40 person orders with notice</li>
-            <li>Menu rotates, so ask what's on the smoker that day</li>
-          </ul>
-        </div>
+      <div class="menu-foot">
+        <span>Menu rotates day to day — walk in or call ahead. Feeding a crowd? They handle 30–40 person orders with notice.</span>
+        <span>Brisket plate, 2 sides <span class="amt">≈ $16</span></span>
       </div>
-      <p class="price-note">A brisket plate with two sides runs around <span class="amt">$16</span>. Cash and card details are best confirmed by phone.</p>
     </div>
   </section>
 
   <!-- GALLERY -->
   <section id="gallery">
     <div class="wrap">
-      <span class="eyebrow">The spread</span>
-      <h2 class="section-title">What comes off the smoker.</h2>
-      <p class="section-lede">A preview of the kind of plates that make people drive an hour out of their way.</p>
       <div class="gallery-banner" data-reveal>
         <img src="img/pulled-pork.jpg" alt="A hand-pulled pork sandwich piled high on a bun" loading="lazy">
         <div class="gallery-caption">
@@ -406,22 +382,18 @@
   <!-- REVIEWS -->
   <section class="reviews" id="reviews">
     <div class="wrap">
-      <span class="eyebrow">What people say</span>
-      <h2 class="section-title">1,000+ reviews, zero advertising.</h2>
-      <div class="review-grid">
-        <div class="review-card" data-reveal>
-          <span class="stars mono">★★★★★</span>
-          <p>"You know it's probably some of the best BBQ I've ever had."</p>
-          <cite>TripAdvisor review</cite>
-        </div>
-        <div class="review-card" data-reveal>
-          <span class="stars mono">★★★★★</span>
+      <span class="kicker">1,000+ reviews, zero advertising</span>
+      <p class="review-lead" data-reveal>
+        "You know it's probably some of the best BBQ I've ever had."
+        <cite>TripAdvisor review</cite>
+      </p>
+      <div class="review-minor-row">
+        <div class="review-minor" data-reveal>
           <p>"Brisket on Saturdays is to die for."</p>
           <cite>TripAdvisor review</cite>
         </div>
-        <div class="review-card" data-reveal>
-          <span class="stars mono">★★★★★</span>
-          <p>"Wonderful service and really good food — always packed, and everyone there seems happy to be eating there."</p>
+        <div class="review-minor" data-reveal>
+          <p>"Wonderful service and really good food — always packed, and everyone seems happy to be there."</p>
           <cite>Customer review</cite>
         </div>
       </div>
@@ -432,12 +404,10 @@
   <section id="find">
     <div class="wrap find-grid">
       <div data-reveal>
-        <span class="eyebrow">Find us</span>
-        <h2 class="section-title">Look for the log cabin at the crossroads.</h2>
-        <div class="honest-box">
-          <b>Honest heads-up:</b> there's no big sign from the highway. Uncle Beth's sits at a four-way stop on OH-245 outside North Lewisburg — set your GPS and trust it. In summer, parking spills down the road, so give yourself a few extra minutes.
-        </div>
-        <p>6262 OH-245, North Lewisburg, OH 43060</p>
+        <span class="kicker">Find us</span>
+        <h2 class="section-title" style="margin-bottom:.6em;">Look for the log cabin at the crossroads.</h2>
+        <p class="honest-line"><b>Heads up:</b> no big sign from the highway — set your GPS and trust it. Parking spills down the road in summer.</p>
+        <p style="color:var(--ink-muted);">6262 OH-245, North Lewisburg, OH 43060</p>
         <div class="find-ctas">
           <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Uncle+Beth%27s+BBQ+6262+OH-245+North+Lewisburg+OH+43060" target="_blank" rel="noopener">Get directions</a>
           <a class="btn btn-light" href="https://www.google.com/maps/search/?api=1&query=Uncle+Beth%27s+BBQ+6262+OH-245+North+Lewisburg+OH+43060" target="_blank" rel="noopener">View on Google Maps</a>
@@ -447,18 +417,15 @@
         </div>
       </div>
       <div data-reveal>
-        <div class="hours-card">
-          <h3 style="margin-bottom:.9em;font-size:1.2rem;">Hours</h3>
-          <table class="hours-table">
-            <tr><td>Monday</td><td>Closed</td></tr>
-            <tr><td>Tuesday</td><td>Closed</td></tr>
-            <tr><td>Wednesday</td><td>Closed</td></tr>
-            <tr><td>Thursday</td><td>11:30am – 7:30pm</td></tr>
-            <tr><td>Friday</td><td>11:30am – 7:30pm</td></tr>
-            <tr><td>Saturday</td><td>11:30am – 7:30pm</td></tr>
-            <tr><td>Sunday</td><td>Closed</td></tr>
-          </table>
-        </div>
+        <table class="hours-table">
+          <tr><td>Monday</td><td>Closed</td></tr>
+          <tr><td>Tuesday</td><td>Closed</td></tr>
+          <tr><td>Wednesday</td><td>Closed</td></tr>
+          <tr class="open"><td>Thursday</td><td>11:30–7:30</td></tr>
+          <tr class="open"><td>Friday</td><td>11:30–7:30</td></tr>
+          <tr class="open"><td>Saturday</td><td>11:30–7:30</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
       </div>
     </div>
   </section>
@@ -466,24 +433,23 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="wrap">
-      <span class="eyebrow" style="background:rgba(251,243,229,.1);color:var(--accent-gold);">Get in touch</span>
-      <h2 class="section-title">No website, no online ordering — just call.</h2>
-      <p class="section-lede">Until now, this page didn't exist either. Phone and social media are still the fastest way to reach the smoker.</p>
-      <div class="contact-grid">
-        <a class="contact-card" href="tel:+19377470123">
-          <span class="tag mono">Phone</span>
-          <span class="val">(937) 747-0123</span>
-          <span class="sub">Best for large orders and Prime Rib Fridays</span>
+      <span class="kicker" style="color:var(--accent-gold);">No website, no online ordering</span>
+      <h2 class="section-title">Just call.</h2>
+
+      <a class="contact-primary" href="tel:+19377470123">
+        <span>
+          <span class="label">Phone</span>
+          <span class="num">(937) 747-0123</span>
+        </span>
+        <span class="sub">Best for large orders and Prime Rib Fridays</span>
+      </a>
+
+      <div class="contact-secondary">
+        <a href="https://www.facebook.com/UncleBethsBBQ/" target="_blank" rel="noopener">
+          <span class="label">FB</span> Uncle Beth's BBQ
         </a>
-        <a class="contact-card" href="https://www.facebook.com/UncleBethsBBQ/" target="_blank" rel="noopener">
-          <span class="tag mono">Facebook</span>
-          <span class="val">Uncle Beth's BBQ</span>
-          <span class="sub">Daily specials and what's on the smoker</span>
-        </a>
-        <a class="contact-card" href="https://www.instagram.com/unclebeths/" target="_blank" rel="noopener">
-          <span class="tag mono">Instagram</span>
-          <span class="val">@unclebeths</span>
-          <span class="sub">Photos from the pit</span>
+        <a href="https://www.instagram.com/unclebeths/" target="_blank" rel="noopener">
+          <span class="label">IG</span> @unclebeths
         </a>
       </div>
     </div>
@@ -498,7 +464,7 @@
       <div>6262 OH-245, North Lewisburg, OH 43060</div>
       <div>(937) 747-0123 · Thu–Sat, 11:30am–7:30pm</div>
     </div>
-    <div>Smoked low & slow at the crossroads.</div>
+    <div>Smoked low &amp; slow at the crossroads.</div>
   </div>
   <div class="wrap footer-credits">
     Photos: smoked ribs, Public Domain (Wikimedia Commons) · pulled pork sandwich, Infrogmation of New Orleans (<a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>), via Wikimedia Commons — illustrative stand-ins until real photos of Uncle Beth's are added. Demo site, not yet affiliated with the business.
