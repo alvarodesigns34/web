@@ -15,12 +15,12 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c1916'/%3E%3Cpath fill='%23b7a790' d='M16 6c-1.2 2.4-3.8 4-6.6 4-.4 2.6.4 5.2 2.2 7.1C9.8 19 8.6 21.4 8.6 24c0 .6 2.6 1.6 7.4 1.6s7.4-1 7.4-1.6c0-2.6-1.2-5-3-6.9 1.8-1.9 2.6-4.5 2.2-7.1C19.8 10 17.2 8.4 16 6z'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500;1,6..96,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink:#1c1916; --ink-soft:#3f3a34; --paper:#f4efe7; --cream:#f7f3ec;
       --terra:#8f3d2a; --olive:#4a5343; --muted:#6d655c; --line:#ddd4c6; --sand:#b7a790;
-      --display:"Fraunces","Times New Roman",serif;
+      --display:"Bodoni Moda","Times New Roman",serif;
       --sans:"Outfit",ui-sans-serif,system-ui,sans-serif;
       --ease:cubic-bezier(.22,1,.36,1);
     }
@@ -57,13 +57,14 @@
     .drawer button,.drawer a.big{font-family:var(--display);font-size:14vw;line-height:.9;text-align:left;padding:.25rem 0}
     .hero{position:relative;min-height:38rem;background:var(--ink);color:var(--cream)}
     .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%}
-    .hero .g{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,25,22,.75),rgba(28,25,22,.2) 55%,rgba(28,25,22,.3))}
+    .hero .g{position:absolute;inset:auto 0 0;height:70%;background:linear-gradient(to top,rgba(26,24,21,.8),transparent)}
     .hero-copy{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;min-height:38rem;padding:7rem 0 2.5rem}
     @media(min-height:760px){.hero,.hero-copy{min-height:100svh}}
     .hero h1{margin:.8rem 0 0;font-size:clamp(3.4rem,11vw,8.75rem);font-weight:500;line-height:.84;letter-spacing:-.035em;text-transform:uppercase;max-width:8ch}
     .hero .tag{margin:1.2rem 0 0;font-family:var(--display);font-style:italic;font-size:clamp(1.15rem,2vw,1.5rem);color:rgba(247,243,236,.9)}
     .btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
-    .year{font-family:var(--display);font-style:italic;font-weight:500;line-height:.78;letter-spacing:-.05em;font-size:clamp(6.2rem,20vw,14.5rem);margin:0}
+    .year{font-family:var(--display);font-style:italic;font-weight:500;line-height:.72;letter-spacing:-.06em;font-size:clamp(7rem,24vw,16rem);margin:0}
+    @media(min-width:1024px){.house-pic{display:block !important}}
     .display{font-family:var(--display);font-style:italic;font-weight:500;line-height:.94}
     .grid12{display:grid;gap:2.5rem}
     @media(min-width:1024px){
@@ -144,21 +145,21 @@
         <p class="kicker" style="margin:0;color:rgba(247,243,236,.75)">Hartlepool Marina · Est. 2006</p>
         <h1>Casa<span style="display:block">del Mar</span></h1>
         <p class="tag">Spanish flavours. Marina nights.</p>
-        <div class="btns">
+        <div class="btns" style="align-items:center;gap:2rem">
           <a class="btn btn-light" href="tel:+441429222223">Book a table</a>
-          <button class="btn btn-ghost" type="button" data-open-menu>Explore menu</button>
+          <button class="nav-link kicker" type="button" data-open-menu style="padding:.5rem 0;border:0">Explore menu</button>
         </div>
       </div>
     </section>
 
-    <section class="cream" id="about">
-      <div class="wrap grid12" style="padding:6rem 0 8rem;align-items:start">
-        <div class="span6 pt-late" data-reveal>
-          <h2 class="display" style="margin:0;font-size:clamp(2.6rem,6vw,5.4rem);line-height:.92">Spanish at heart.<span style="display:block;margin-top:.25rem">By the water.</span></h2>
-          <p style="margin:2rem 0 0;max-width:28rem;line-height:1.75;color:var(--ink-soft)">Opened in 2006 at Navigation Point, Hartlepool Marina. Spanish tapas with Mexican and North African plates — mussels, gambas, chorizo, fajitas and paella. Walk-ins welcome.</p>
+    <section class="cream" id="about" style="overflow:hidden">
+      <div class="grid12" style="padding:0;align-items:start">
+        <div class="span5 pt-late" data-reveal style="padding:6rem 1.25rem 4rem">
+          <h2 class="display" style="margin:0;font-size:clamp(2.6rem,5.6vw,5rem);line-height:.92">Spanish at heart.<span style="display:block;margin-top:.25rem">By the water.</span></h2>
+          <p style="margin:2rem 0 0;max-width:22rem;line-height:1.75;color:var(--ink-soft)">Navigation Point, Hartlepool Marina, since 2006. Spanish tapas with Mexican and North African plates. Walk-ins welcome.</p>
         </div>
         <div class="span6" data-reveal>
-          <div class="zoom"><img src="img/exterior.jpg" alt="The Casa Del Mar fascia on Hartlepool Marina, with picnic tables outside." loading="lazy" style="aspect-ratio:4/5;object-fit:cover;object-position:center 62%;width:100%;min-height:20rem" /></div>
+          <div class="zoom"><img src="img/exterior.jpg" alt="The Casa Del Mar fascia on Hartlepool Marina, with picnic tables outside." loading="lazy" style="aspect-ratio:4/5;object-fit:cover;object-position:center 62%;width:100%;min-height:22rem" /></div>
         </div>
       </div>
     </section>
@@ -168,50 +169,54 @@
         <p class="kicker" style="color:var(--terra);margin:0">From the kitchen</p>
         <h2 class="display" data-reveal style="margin:1rem 0 0;font-size:clamp(2.6rem,6vw,5.2rem)">Made for sharing.</h2>
       </div>
-      <figure class="wrap" style="margin:3.5rem auto 0;padding:0">
-        <img src="img/plates-sharing.jpg" alt="A sharing table at Casa Del Mar: calamari, fried brie, chips and stew." loading="lazy" style="width:100%;aspect-ratio:16/8;object-fit:cover" />
+      <figure style="margin:3.5rem 0 0">
+        <img src="img/plates-sharing.jpg" alt="A sharing table at Casa Del Mar: calamari, fried brie, chips and stew." loading="lazy" style="width:100%;aspect-ratio:16/7;object-fit:cover" />
       </figure>
-      <article class="wrap grid12" style="padding:5rem 0 0;align-items:center">
-        <div class="zoom span7"><img src="img/mussels.jpg" alt="Mejillones — steamed mussels at Casa Del Mar." loading="lazy" style="aspect-ratio:5/4;object-fit:cover;width:100%" /></div>
-        <div class="span5" data-reveal>
-          <p class="kicker" style="color:var(--muted);margin:0">Mejillones</p>
-          <p style="margin:1rem 0 0;max-width:22rem;line-height:1.7;color:var(--ink-soft)">Fresh steamed mussels in a spicy tomato sauce, or in white wine, garlic and cream.</p>
+      <article class="grid12" style="padding:0;align-items:end">
+        <div class="zoom span8"><img src="img/mussels.jpg" alt="Mejillones — steamed mussels at Casa Del Mar." loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%" /></div>
+        <div class="span4" data-reveal style="padding:2.5rem 1.25rem">
+          <p class="display" style="margin:0;font-size:clamp(2.2rem,4vw,3.4rem)">Mejillones</p>
+          <p style="margin:1.2rem 0 0;max-width:18rem;line-height:1.7;color:var(--ink-soft)">Steamed mussels in a spicy tomato sauce, or in white wine, garlic and cream.</p>
         </div>
       </article>
-      <article class="wrap grid12" style="padding:6rem 0 0;align-items:center">
-        <div class="span4" data-reveal>
-          <p class="kicker" style="color:var(--muted);margin:0">Paella de mariscos</p>
-          <p style="margin:1rem 0 0;max-width:22rem;line-height:1.7;color:var(--ink-soft)">Spanish rice with seafood and vegetables, served in a small pan.</p>
+      <article class="grid12" style="padding:0;align-items:center">
+        <div class="span4" data-reveal style="padding:2.5rem 1.25rem">
+          <p class="display" style="margin:0;font-size:clamp(2rem,3.4vw,3rem)">Paella de mariscos</p>
+          <p style="margin:1.2rem 0 0;max-width:18rem;line-height:1.7;color:var(--ink-soft)">Spanish rice with seafood and vegetables, served in a small pan.</p>
         </div>
         <div class="zoom span8"><img src="img/plates-paella.jpg" alt="Paella de mariscos with mussels at Casa Del Mar." loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%" /></div>
       </article>
-      <div class="wrap grid12" style="padding:6rem 0 0;align-items:start">
-        <article class="span5" data-reveal>
-          <div class="zoom"><img src="img/prawns.jpg" alt="Gambas pil pil — king prawns in garlic and chilli oil." loading="lazy" style="aspect-ratio:3/4;object-fit:cover;width:100%" /></div>
-          <p class="kicker" style="color:var(--muted);margin:1.4rem 0 0">Gambas pil pil</p>
-          <p style="margin:.7rem 0 0;max-width:16rem;color:var(--ink-soft)">King prawns in garlic and chilli oil.</p>
-        </article>
-        <article class="span7 pt-shift" data-reveal>
-          <div class="zoom"><img src="img/steak.jpg" alt="Solomillo con pimienta — sirloin with peppercorn sauce." loading="lazy" style="aspect-ratio:16/10;object-fit:cover;width:100%" /></div>
-          <p class="kicker" style="color:var(--muted);margin:1.4rem 0 0">Solomillo con pimienta</p>
-          <p style="margin:.7rem 0 0;max-width:22rem;color:var(--ink-soft)">Sirloin steak with peppercorn sauce — a regular on the large-plate list.</p>
-        </article>
-      </div>
-      <article class="wrap" style="padding:5rem 0">
-        <p class="kicker" style="color:var(--muted);margin:0">The skillet</p>
-        <h3 class="display" data-reveal style="margin:1rem 0 0;font-size:clamp(3.4rem,11vw,9rem);line-height:.82">Fajitas</h3>
-        <p style="margin:1.5rem 0 0;max-width:32rem;line-height:1.7;color:var(--ink-soft)">Hot skillet with peppers and onions, tortillas, salsa and sour cream. Vegetarian, chicken, steak or king prawn.</p>
-        <button class="btn btn-solid" type="button" data-open-menu style="margin-top:2.4rem">View full menu</button>
+      <article style="position:relative">
+        <img src="img/plates-tacos.jpg" alt="Tacos de pescado at Casa Del Mar." loading="lazy" style="width:100%;aspect-ratio:16/8;object-fit:cover" />
+        <div style="position:absolute;inset:auto 0 0;padding:2rem 1.25rem;background:linear-gradient(to top,rgba(26,24,21,.75),transparent)">
+          <p class="display" style="margin:0;font-size:clamp(1.8rem,4vw,3rem);color:var(--cream)">Tacos de pescado</p>
+          <p style="margin:.5rem 0 0;max-width:22rem;font-size:.9rem;color:rgba(247,243,236,.8)">Soft tortillas, breaded fish, pink onions, lettuce, spicy mayo.</p>
+        </div>
       </article>
+      <div class="wrap grid12" style="padding:5rem 0;align-items:start">
+        <div class="span5" data-reveal>
+          <p class="display" style="margin:0;font-size:clamp(2rem,3vw,2.8rem)">Gambas pil pil</p>
+          <p style="margin:1rem 0 0;max-width:16rem;color:var(--ink-soft)">King prawns in garlic and chilli oil.</p>
+          <p class="display" style="margin:3rem 0 0;font-size:clamp(2rem,3vw,2.8rem)">Solomillo con pimienta</p>
+          <p style="margin:1rem 0 0;max-width:16rem;color:var(--ink-soft)">Sirloin steak with peppercorn sauce.</p>
+        </div>
+        <div class="span7" data-reveal>
+          <p class="kicker" style="color:var(--muted);margin:0">The skillet</p>
+          <h3 class="display" style="margin:.7rem 0 0;font-size:clamp(3.6rem,12vw,9.5rem);line-height:.78">Fajitas</h3>
+          <p style="margin:1.5rem 0 0;max-width:28rem;line-height:1.7;color:var(--ink-soft)">Hot skillet with peppers and onions, tortillas, salsa and sour cream. Vegetarian, chicken, steak or king prawn.</p>
+          <button class="btn btn-solid" type="button" data-open-menu style="margin-top:2.4rem">View full menu</button>
+        </div>
+      </div>
     </section>
 
-    <section class="cream" id="house">
-      <div class="wrap" style="padding:7rem 0 8rem">
-        <p class="year" data-reveal>2006</p>
-        <div data-reveal style="margin-top:2.5rem;max-width:28rem;margin-left:auto">
+    <section class="cream" id="house" style="overflow:hidden">
+      <div class="wrap" style="padding:7rem 0 8rem;position:relative">
+        <p class="year" data-reveal style="position:relative;z-index:1">2006</p>
+        <img src="img/exterior.jpg" alt="" loading="lazy" aria-hidden="true" style="display:none;position:absolute;right:0;top:18%;width:28%;max-width:20rem;aspect-ratio:3/4;object-fit:cover;object-position:center 55%" class="house-pic" />
+        <div data-reveal style="margin-top:3rem;max-width:28rem;margin-left:auto;position:relative;z-index:1">
           <p class="kicker" style="color:var(--terra);margin:0">The beginning</p>
-          <h2 class="display" style="margin:1rem 0 0;font-size:clamp(2rem,4vw,3.4rem)">A house by the sea.</h2>
-          <p style="margin:1.5rem 0 0;line-height:1.75;color:var(--ink-soft)">Casa Del Mar opened on 23 January 2006 at Navigation Point, Hartlepool Marina. The name is a nod to Café del Mar.</p>
+          <h2 class="display" style="margin:1rem 0 0;font-size:clamp(2rem,4vw,3.2rem)">A house by the sea.</h2>
+          <p style="margin:1.5rem 0 0;line-height:1.75;color:var(--ink-soft)">Opened 23 January 2006 at Navigation Point. The name is a nod to Café del Mar.</p>
         </div>
       </div>
     </section>
@@ -257,11 +262,11 @@
     </section>
 
     <section style="position:relative;min-height:42rem;overflow:hidden;background:var(--ink);color:var(--cream)">
-      <img src="img/dinner.jpg" alt="A candlelit table — an evening at Casa Del Mar." loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
-      <div style="position:absolute;inset:0;background:rgba(28,25,22,.6)"></div>
+      <img src="img/exterior.jpg" alt="Casa Del Mar on Hartlepool Marina at evening." loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%" />
+      <div style="position:absolute;inset:0;background:rgba(26,24,21,.62)"></div>
       <div class="wrap" style="position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;min-height:42rem;padding:4rem 0">
-        <h2 data-reveal style="margin:0;max-width:10ch;font-size:clamp(3rem,8vw,7.2rem);line-height:.88;font-weight:500">Your table<span class="display" style="display:block">is waiting.</span></h2>
-        <p style="margin:1.4rem 0 0;font-size:1.15rem;color:rgba(247,243,236,.8)">Good food. Good company. By the water.</p>
+        <h2 data-reveal style="margin:0;max-width:10ch;font-size:clamp(3rem,8vw,7.2rem);line-height:.86;font-weight:500">Your table<span class="display" style="display:block">is waiting.</span></h2>
+        <p style="margin:1.4rem 0 0;font-size:1.15rem;color:rgba(247,243,236,.8)">Good food. Good company. Right by the water.</p>
         <a class="btn btn-light" href="tel:+441429222223" style="margin-top:2.4rem;width:fit-content">Book a table</a>
         <a href="tel:+441429222223" style="margin-top:1.2rem;font-family:var(--display);font-style:italic;font-size:1.85rem;color:var(--sand)">01429 222223</a>
       </div>
@@ -287,7 +292,7 @@
     </div>
     <div class="wrap" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;line-height:1.55;color:rgba(247,243,236,.35)">
       <p style="margin:0">© 2026 Casa Del Mar. Hartlepool, United Kingdom.</p>
-      <p style="margin:.5rem 0 0;max-width:36rem">Restaurant and marina photographs from Casa Del Mar. Additional stills are illustrative. Menu as printed on the current cards.</p>
+      <p style="margin:.5rem 0 0;max-width:36rem">Photographs from Casa Del Mar. Menu as printed on the current cards.</p>
     </div>
   </footer>
 
